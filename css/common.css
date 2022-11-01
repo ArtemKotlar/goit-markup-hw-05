@@ -89,15 +89,24 @@ body {
     height: 4px;
     border-radius: 2px;
     background-color: var(--accnent-color);
-    /* opacity: 0; */
-    transform: scaleX(0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-nav:hover::after,
 .link-nav:focus::after {
-    /* opacity: 1; */
-    transform: scaleX(1);
+    opacity: 1;
+}
+
+.current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accnent-color);
 }
 
 .site-nav .item:not(:last-child) {
@@ -115,7 +124,7 @@ body {
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
     
 .site-nav .link:hover, 
@@ -136,26 +145,22 @@ body {
     margin-right: 30px;
 }
 
-.mail-tel .mail {
+.mail-icon {
+    fill: currentColor;
+    margin-right: 10px;
+}
+
+.mail {
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
-}
-    
-.mail-icon {
-    fill: currentColor;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.mail {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover,
@@ -194,7 +199,7 @@ body {
     margin-top: 9px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address.maps {
@@ -232,15 +237,9 @@ body {
 }
  
 .socials-item.changes {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .socials-icon.changes {
     fill: #FFFFFF;
-}
-
-.socials-item:hover,
-.socials-item:focus {
-    border: 1px solid var(--accnent-color);
-    background-color: var(--accnent-color);
 }
